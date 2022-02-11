@@ -15,6 +15,7 @@ let worl, solver;
 
 let floor;
 
+
 initialize();
 animate();
 
@@ -317,6 +318,10 @@ function addLight(){
     let ambientLight = new THREE.AmbientLight(0xffffff);
     markerRoot1.add(ambientLight);
 }
+
+document.body.addEventListener("touchstart", function () {
+    dropPackage();
+}, false)
 
 function rand(min, max) {
 	return parseInt(min + (Math.random() * max));
