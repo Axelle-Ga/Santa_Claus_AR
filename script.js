@@ -321,7 +321,7 @@ function addLight(){
 
 document.body.addEventListener("touchstart", function () {
     dropPackage();
-}, false)
+})
 
 function rand(min, max) {
 	return parseInt(min + (Math.random() * max));
