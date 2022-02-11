@@ -162,7 +162,7 @@ function update()
 	keyboard.update();
 	if (keyboard.isKeyPressed("W"))
 		mesh0.rotation.y +=0.01;
-	if (keyboard.isKeyPressed("A"))
+	if (keyboard.isKeyPressed("A")||window.USER_IS_TOUCHING)
 		dropPackage();
 
 	updatePhysics();
@@ -319,9 +319,16 @@ function addLight(){
     markerRoot1.add(ambientLight);
 }
 
-// document.body.addEventListener("touchstart", function () {
-//     dropPackage();
-// })
+window.addEventListener('touchstart', function onFirstTouch() {
+    // we could use a class
+    document.body.classList.add('user-is-touching');
+  
+    // or set some global variable
+    window.USER_IS_TOUCHING = true;
+  
+    // we only need to know once that a human touched the screen, so we can stop listening now
+    window.removeEventListener('touchstart', onFirstTouch, false);
+  }, false);
 
 function rand(min, max) {
 	return parseInt(min + (Math.random() * max));
