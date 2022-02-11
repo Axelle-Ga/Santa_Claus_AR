@@ -326,7 +326,7 @@ window.addEventListener('touchstart', function onFirstTouch() {
   
   }, false);
 
-  window.addEventListener('touchstop', function onFirstTouch() {
+  window.addEventListener('touchend', function onFirstTouch() {
   
     // or set some global variable
     window.USER_IS_TOUCHING = false;
