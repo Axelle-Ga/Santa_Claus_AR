@@ -319,9 +319,9 @@ function addLight(){
     markerRoot1.add(ambientLight);
 }
 
-document.body.addEventListener("touchstart", function () {
-    dropPackage();
-})
+// document.body.addEventListener("touchstart", function () {
+//     dropPackage();
+// })
 
 function rand(min, max) {
 	return parseInt(min + (Math.random() * max));
